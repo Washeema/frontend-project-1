@@ -1,0 +1,95 @@
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar.fixed-top {
+    top: 0 !important;
+}
+    body {
+    background-color: #ffffff;
+}
+.nav{
+    background-color: #ffffff;}
+.container-fluid{
+    background-color: #ffffff;
+}
+ .nav-2{
+    background-color: #ffffff;
+ }      
+.product-section {
+    margin-top: 44px;
+
+}
+.product-row{
+    margin-right: 30px;
+}
+.faq-section{
+    margin-bottom: 60px;
+
+}
+.faq-section h3{
+   margin-bottom: 70px;
+   margin-top: 30px;
+}
+.faq-section img{
+    width: 85%;
+    margin-top: -40px;
+}
+.fa-instagram{
+    background: linear-gradient(45deg,
+                #f09433,
+                #e6683c,
+                #dc2743,
+                #cc2366,
+                #bc1888);
+}
+.about-us img{
+    width: 500px;
+}
+.btn {
+    color: #ffffff;
+    background-color: #000000;
+}
+.btn:hover{
+    background-color: #000000;
+        color: #ffffff;
+}
+.image img{
+    width: 100px;
+    height: 100px;
+}
+
+.my-nav-link {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+}
+
+
+.my-nav-icon {
+    font-size: 1.35rem !important;
+    color: rgb(0, 0, 0) !important;
+    transition: transform 0.2s ease;
+    
+}
+
+
+.my-nav-link:hover .my-nav-icon {
+    transform: scale(1.15);
+    color: #000000 !important;
+    
+}
+.text-head h2{
+    text-align: left;
+}
+.accordion-button,
+.accordion-button:not(.collapsed),
+.accordion-button.collapsed {
+    color: #000000 ;
+    background-color: #dab6b6;
+}

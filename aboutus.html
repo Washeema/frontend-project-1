@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVO About Us</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top m-0 p-0">
+            <div class="container-fluid px-8">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/logo.avif" alt="Logo" style="height: 40px; width: auto;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./profile.html"><i class="fa-solid fa-circle-user"
+                                    style="color: rgb(0, 0, 0);"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html"><i class="fa-solid fa-house" style="color: rgb(0, 0, 0);"></i></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+                                <i class="fa-solid fa-cart-plus" style="color: rgb(0, 0, 0);"></i>
+                                <span id="cart-count" class="badge bg-warning text-dark">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 56px;">
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="nav-2 col-md-2 position-fixed start-0 vh-100 d-none d-md-block"
+                    style="z-index: 1020; top: 56px; padding-top: 20px;">
+                    <ul class="nav nav-pills flex-column px-7 pt-9 ">
+                        
+                        <li class="nav-item mb-3">
+                            <a class="btn w-100 " href="./man.html">Man</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="btn w-100 " href="./woman.html">Woman</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="btn w-100 " href="./aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="btn w-100 " href="./faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="btn w-100 " href="./visit.html">Visit Us</a>
+                        </li>
+                    </ul>
+                <br>
+                <br>
+                <img src="./assets/sale.jpg" class="img-thumbnail mt-5 d-block mx-auto" alt="...">
+                </div>
+                </div>
+
+
+                <div class="col-12 col-md-10 offset-md-2 py-4 px-4">
+
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title">Shopping Cart</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul id="cart-items" class="list-group mb-3">
+
+                            </ul>
+                            <hr>
+                            <h5>Total: Tk <span id="cart-total">0</span></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--about us-->
+<section style="margin-top: -33px !important; position: relative; z-index: 10;">
+    <div class="col-md-10 offset-md-2 pt-0 pb-4 px-4">
+        <img src="./assets/about us.jpg" alt="About Us" class="img-fluid w-100">
+
+        <hr class="my-4 text-muted">
+
+        <div class="text">
+            <div class="text-head">
+                <h2>Brand</h2>
+            </div>
+            <div class="text-p">
+                <p>Balmoral was founded in Canada to create timeless garments shaped by the country’s distinct climate
+                    and way of life.
+                    Drawing from its Canadian heritage, the brand takes inspiration from landscapes where long winters
+                    demand protection,
+                    resilience, and warmth, and short summers invite lightness and movement. Each collection
+                    reinterprets essential pieces
+                    through this seasonal contrast, balancing function and refinement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="text-center bg-light py-4 mt-5 rounded border">
+    <div class="mb-3">
+        <a href="#" class="me-3 text-dark"><i class="fa-brands fa-facebook fa-lg"></i></a>
+        <a href="#" class="me-3 text-dark"><i class="fa-brands fa-instagram fa-lg"></i></a>
+        <a href="#" class="text-dark"><i class="fa-brands fa-twitter fa-lg"></i></a>
+    </div>
+    <p class="mb-2"> &copy; 2026. All rights reserved by E-Commerce. </p>
+    <div>
+        <a href="#" class="text-muted me-2 text-decoration-none small">Privacy Policy</a>
+        <a href="#" class="text-muted me-2 text-decoration-none small">Terms Of Services</a>
+        <a href="#" class="text-muted text-decoration-none small">Contact Us</a>
+    </div>
+</footer>
+
+</div>
+</div>
+</div>
+</main>
+
+
+<script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
