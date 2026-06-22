@@ -1,63 +1,84 @@
-
 html,
 body {
     margin: 0 !important;
     padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar.fixed-top {
     top: 0 !important;
 }
-    body {
+
+body {
     background-color: #ffffff;
 }
-.nav{
-    background-color: #ffffff;}
-.container-fluid{
+
+.nav {
     background-color: #ffffff;
 }
- .nav-2{
+
+.container-fluid {
     background-color: #ffffff;
- }      
+    width: 100%;
+}
+
+.nav-2 {
+    background-color: #ffffff;
+}
+
 .product-section {
     margin-top: 44px;
+}
 
+.product-row {
+    padding-right: 15px;
+    padding-left: 15px;
 }
-.product-row{
-    margin-right: 30px;
-}
-.faq-section{
+
+.faq-section {
     margin-bottom: 60px;
+}
 
+.faq-section h3 {
+    margin-bottom: 40px;
+    margin-top: 30px;
 }
-.faq-section h3{
-   margin-bottom: 70px;
-   margin-top: 30px;
+
+.faq-section img {
+    width: 100%;
+    max-width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
-.faq-section img{
-    width: 85%;
-    margin-top: -40px;
-}
-.fa-instagram{
+
+.fa-instagram {
     background: linear-gradient(45deg,
-                #f09433,
-                #e6683c,
-                #dc2743,
-                #cc2366,
-                #bc1888);
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
 }
-.about-us img{
-    width: 500px;
+
+.about-us img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
+
 .btn {
     color: #ffffff;
     background-color: #000000;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #000000;
-        color: #ffffff;
+    color: #ffffff;
 }
-.image img{
+
+.image img {
     width: 100px;
     height: 100px;
 }
@@ -70,26 +91,45 @@ body {
     text-decoration: none !important;
 }
 
-
 .my-nav-icon {
     font-size: 1.35rem !important;
     color: rgb(0, 0, 0) !important;
     transition: transform 0.2s ease;
-    
 }
-
 
 .my-nav-link:hover .my-nav-icon {
     transform: scale(1.15);
     color: #000000 !important;
-    
 }
-.text-head h2{
+
+.text-head h2 {
     text-align: left;
 }
+
 .accordion-button,
 .accordion-button:not(.collapsed),
 .accordion-button.collapsed {
-    color: #000000 ;
+    color: #000000;
     background-color: #dab6b6;
+}
+
+@media (max-width: 768px) {
+
+    h1,
+    h2,
+    h3,
+    .amount,
+    h5 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .text-head h2 {
+        font-size: 1.5rem;
+    }
+}
+.btn-success {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+    border-color: #28a745 !important;
 }

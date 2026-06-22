@@ -292,23 +292,30 @@
     let count = 0;
     let total = 0;
 
-    function addToCart(name, price) {
+    function addToCart(name, price, button) {
         count++;
         total += price;
-
 
         document.getElementById("cart-count").innerText = count;
         document.getElementById("cart-total").innerText = total.toLocaleString();
 
-
         let li = document.createElement("li");
         li.className = "list-group-item d-flex justify-content-between align-items-center";
         li.innerHTML = `<span>${name}</span> <span class="text-muted">Tk ${price.toLocaleString()}</span>`;
-
         document.getElementById("cart-items").appendChild(li);
+
+        if (button) {
+            button.classList.add('btn-success');
+            let originalText = button.innerText;
+            button.innerText = 'Added ✓';
+
+            setTimeout(() => {
+                button.classList.remove('btn-success');
+                button.innerText = originalText;
+            }, 20000);
+        }
     }
 </script>
-
 
 <script src="./js/bootstrap.bundle.js"></script>
 </body>
