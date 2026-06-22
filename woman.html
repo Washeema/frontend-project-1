@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OVO Woman Collection</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link class="sheet" rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -19,13 +19,11 @@
                     <img src="./assets/logo.avif" alt="Logo" style="height: 40px; width: auto;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-                    
                     <ul class="navbar-nav d-md-none border-bottom pb-2 mb-2">
                         <li class="nav-item"><a class="nav-link" href="./man.html">Man</a></li>
                         <li class="nav-item"><a class="nav-link" href="./woman.html">Woman</a></li>
@@ -33,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="./visit.html">Visit Us</a></li>
                     </ul>
-    
+
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./profile.html"><i
@@ -43,7 +41,7 @@
                             <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"
                                     style="color: rgb(0, 0, 0);"></i></a>
                         </li>
-    
+
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
                                 <i class="fa-solid fa-cart-plus" style="color: rgb(0, 0, 0);"></i>
@@ -52,7 +50,7 @@
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -64,11 +62,9 @@
         <div class="container-fluid">
             <div class="row">
 
-
                 <div class="nav-2 col-md-2 position-fixed start-0 vh-100 d-none d-md-block"
                     style="z-index: 1020; top: 56px; padding-top: 20px;">
                     <ul class="nav nav-pills flex-column px-7 pt-9 ">
-
                         <li class="nav-item mb-3">
                             <a class="btn w-100 " href="./man.html">Man</a>
                         </li>
@@ -88,13 +84,9 @@
                     <br>
                     <br>
                     <img src="./assets/sale.jpg" class="img-thumbnail mt-5 d-block mx-auto" alt="...">
-                    </div>
                 </div>
 
-
                 <div class="col-12 col-md-10 offset-md-2 py-4 px-4">
-
-
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title">Shopping Cart</h5>
@@ -102,9 +94,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <ul id="cart-items" class="list-group mb-3">
-
-                            </ul>
+                            <ul id="cart-items" class="list-group mb-3"></ul>
                             <hr>
                             <h5>Total: Tk <span id="cart-total">0</span></h5>
                         </div>
@@ -126,9 +116,8 @@
                                                     22,700</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 22700)">
+                                                    onclick="addToCart('Powder Blue Sherwani Set', 22700, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -145,9 +134,8 @@
                                                     12,900</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 12900)">
+                                                    onclick="addToCart('Nude Multi - Coloured Saree', 12900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -164,9 +152,8 @@
                                                     13,999</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 13999)">
+                                                    onclick="addToCart('Dusty Pink Thread Work Saree', 13999, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -183,9 +170,8 @@
                                                     45,896</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 45896)">
+                                                    onclick="addToCart('Black Embellished Tuxedo Set', 45896, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -206,9 +192,8 @@
                                                     22,900</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 22900)">
+                                                    onclick="addToCart('Summer dress', 22900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -225,9 +210,8 @@
                                                     24,900</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 24900)">
+                                                    onclick="addToCart('Carolina Klänning Vit/Blå Blommig', 24900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -244,9 +228,8 @@
                                                     34,800</span>.</p>
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 34800)">
+                                                    onclick="addToCart('Dusty Pink Thread Work Saree', 34800, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -264,9 +247,8 @@
                                                         47,900</span>.</p>
                                                 <div class="d-flex gap-2">
                                                     <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
-
                                                     <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                        onclick="addToCart('Black Embellished Tuxedo Set', 47900)">
+                                                        onclick="addToCart('Black Embellished Tuxedo Set', 47900, this)">
                                                         Add Cart
                                                     </button>
                                                 </div>
@@ -278,7 +260,7 @@
                         </section>
                     </div>
                 </section>
-                <!--footer-->
+
                 <footer class="text-center bg-light py-4 mt-5 rounded border">
                     <div class="mb-3">
                         <a href="#" class="me-3 text-dark"><i class="fa-brands fa-facebook fa-lg"></i></a>
@@ -295,10 +277,9 @@
 
             </div>
         </div>
-        </div>
     </main>
-    <!--java-->
-   <script>
+
+    <script>
         let count = 0;
         let total = 0;
 
@@ -315,18 +296,19 @@
             document.getElementById("cart-items").appendChild(li);
 
             if (button) {
+                button.classList.remove('btn-outline-primary');
                 button.classList.add('btn-success');
                 let originalText = button.innerText;
                 button.innerText = 'Added ✓';
 
                 setTimeout(() => {
                     button.classList.remove('btn-success');
+                    button.classList.add('btn-outline-primary');
                     button.innerText = originalText;
-                }, 20000);
+                }, 2000);
             }
         }
     </script>
-
 
     <script src="./js/bootstrap.bundle.js"></script>
 </body>
