@@ -19,11 +19,21 @@
                     <img src="./assets/logo.avif" alt="Logo" style="height: 40px; width: auto;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                    <!-- New Links: Only visible on mobile dropdown (d-md-none) -->
+                    <ul class="navbar-nav d-md-none border-bottom pb-2 mb-2">
+                        <li class="nav-item"><a class="nav-link" href="./man.html">Man</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./woman.html">Woman</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutus.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./visit.html">Visit Us</a></li>
+                    </ul>
+    
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./profile.html"><i
@@ -33,7 +43,7 @@
                             <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"
                                     style="color: rgb(0, 0, 0);"></i></a>
                         </li>
-
+    
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
                                 <i class="fa-solid fa-cart-plus" style="color: rgb(0, 0, 0);"></i>
@@ -255,70 +265,4 @@
                                                 <div class="d-flex gap-2">
                                                     <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
 
-                                                    <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                        onclick="addToCart('Black Embellished Tuxedo Set', 47900)">
-                                                        Add Cart
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </section>
-                <!--footer-->
-                <footer class="text-center bg-light py-4 mt-5 rounded border">
-                    <div class="mb-3">
-                        <a href="#" class="me-3 text-dark"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                        <a href="#" class="me-3 text-dark"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-dark"><i class="fa-brands fa-twitter fa-lg"></i></a>
-                    </div>
-                    <p class="mb-2"> &copy; 2026. All rights reserved by E-Commerce. </p>
-                    <div>
-                        <a href="#" class="text-muted me-2 text-decoration-none small">Privacy Policy</a>
-                        <a href="#" class="text-muted me-2 text-decoration-none small">Terms Of Services</a>
-                        <a href="#" class="text-muted text-decoration-none small">Contact Us</a>
-                    </div>
-                </footer>
-
-            </div>
-        </div>
-        </div>
-    </main>
-    <!--java-->
-   <script>
-        let count = 0;
-        let total = 0;
-
-        function addToCart(name, price, button) {
-            count++;
-            total += price;
-
-            document.getElementById("cart-count").innerText = count;
-            document.getElementById("cart-total").innerText = total.toLocaleString();
-
-            let li = document.createElement("li");
-            li.className = "list-group-item d-flex justify-content-between align-items-center";
-            li.innerHTML = `<span>${name}</span> <span class="text-muted">Tk ${price.toLocaleString()}</span>`;
-            document.getElementById("cart-items").appendChild(li);
-
-            if (button) {
-                button.classList.add('btn-success');
-                let originalText = button.innerText;
-                button.innerText = 'Added ✓';
-
-                setTimeout(() => {
-                    button.classList.remove('btn-success');
-                    button.innerText = originalText;
-                }, 20000);
-            }
-        }
-    </script>
-
-
-    <script src="./js/bootstrap.bundle.js"></script>
-</body>
-
-</html>
+                                                    <button c
