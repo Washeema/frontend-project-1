@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVO Man Collection</title>
+    <title>OVO Collection</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./style.css">
@@ -117,7 +117,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Powder Blue Sherwani Set', 22700, this)">
+                                                    data-id="item-1"
+                                                    onclick="toggleCart('Powder Blue Sherwani Set', 22700, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -135,7 +136,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Nude Multi - Coloured Saree', 12900, this)">
+                                                    data-id="item-2"
+                                                    onclick="toggleCart('Nude Multi - Coloured Saree', 12900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -153,7 +155,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Dusty Pink Thread Work Saree', 13999, this)">
+                                                    data-id="item-3"
+                                                    onclick="toggleCart('Dusty Pink Thread Work Saree', 13999, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -171,7 +174,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Black Embellished Tuxedo Set', 45896, this)">
+                                                    data-id="item-4"
+                                                    onclick="toggleCart('Black Embellished Tuxedo Set', 45896, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -193,7 +197,7 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Summer dress', 22900, this)">
+                                                    data-id="item-5" onclick="toggleCart('Summer dress', 22900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -211,7 +215,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Carolina Klänning Vit/Blå Blommig', 24900, this)">
+                                                    data-id="item-6"
+                                                    onclick="toggleCart('Carolina Klänning Vit/Blå Blommig', 24900, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -229,7 +234,8 @@
                                             <div class="d-flex gap-2">
                                                 <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                 <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                    onclick="addToCart('Dusty Pink Thread Work Saree', 34800, this)">
+                                                    data-id="item-7"
+                                                    onclick="toggleCart('Dusty Pink Thread Work Saree', 34800, this)">
                                                     Add Cart
                                                 </button>
                                             </div>
@@ -248,7 +254,8 @@
                                                 <div class="d-flex gap-2">
                                                     <a href="#" class="btn btn-primary btn-sm flex-fill">Buy Now</a>
                                                     <button class="btn btn-outline-primary btn-sm flex-fill"
-                                                        onclick="addToCart('Black Embellished Tuxedo Set', 47900, this)">
+                                                        data-id="item-8"
+                                                        onclick="toggleCart('Black Embellished Tuxedo Set', 47900, this)">
                                                         Add Cart
                                                     </button>
                                                 </div>
@@ -283,30 +290,38 @@
         let count = 0;
         let total = 0;
 
-        function addToCart(name, price, button) {
-            count++;
-            total += price;
+        function toggleCart(name, price, button) {
+            let itemId = button.getAttribute('data-id');
+
+            if (button.classList.contains('btn-success')) {
+                count--;
+                total -= price;
+
+                let targetLi = document.getElementById('li-' + itemId);
+                if (targetLi) {
+                    targetLi.remove();
+                }
+
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-primary');
+                button.innerText = 'Add Cart';
+            } else {
+                count++;
+                total += price;
+
+                let li = document.createElement("li");
+                li.id = 'li-' + itemId;
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+                li.innerHTML = `<span>${name}</span> <span class="text-muted">Tk ${price.toLocaleString()}</span>`;
+                document.getElementById("cart-items").appendChild(li);
+
+                button.classList.remove('btn-outline-primary');
+                button.classList.add('btn-success');
+                button.innerText = 'Added ✓';
+            }
 
             document.getElementById("cart-count").innerText = count;
             document.getElementById("cart-total").innerText = total.toLocaleString();
-
-            let li = document.createElement("li");
-            li.className = "list-group-item d-flex justify-content-between align-items-center";
-            li.innerHTML = `<span>${name}</span> <span class="text-muted">Tk ${price.toLocaleString()}</span>`;
-            document.getElementById("cart-items").appendChild(li);
-
-            if (button) {
-                button.classList.remove('btn-outline-primary');
-                button.classList.add('btn-success');
-                let originalText = button.innerText;
-                button.innerText = 'Added ✓';
-
-                setTimeout(() => {
-                    button.classList.remove('btn-success');
-                    button.classList.add('btn-outline-primary');
-                    button.innerText = originalText;
-                }, 2000);
-            }
         }
     </script>
 
