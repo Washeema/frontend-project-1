@@ -12,9 +12,28 @@
 
 <body>
 
+    <!-- Sticky nav -1 -->
+    <div class="top-ticker-banner fixed-top bg-dark text-white d-flex align-items-center">
+        <div
+            class="container-fluid bg-dark d-flex flex-column flex-sm-row justify-content-between align-items-center text-center">
+            <div class="ticker-date small mb-1 mb-sm-0 text-white fw-large">
+                <i class="fa-regular fa-clock me-2"></i><span id="live-clock">Loading timestamp...</span>
+            </div>
+            <div class="ticker-cta small">
+                <span class="d-none d-md-inline text-white">Summer Special:</span>
+                <a href="#" class="fw-bold text-warning text-decoration-none ms-1 hover-underline">
+                    Get up to 40% Off Now <i class="fa-solid fa-arrow-right-long ms-1 small"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top m-0 p-0">
-            <div class="container-fluid px-8">
+        <!--Sticky nav-2-->
+        <nav class="navbar navbar-expand-lg fixed-top m-0 p-2 bg-white border-bottom">
+            <div class="container-fluid px-md-4">
                 <a class="navbar-brand" href="#">
                     <img src="./assets/logo.avif" alt="Logo" style="height: 40px; width: auto;">
                 </a>
@@ -23,9 +42,8 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
     
-                    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav d-md-none border-bottom pb-2 mb-2">
                         <li class="nav-item"><a class="nav-link" href="./man.html">Man</a></li>
                         <li class="nav-item"><a class="nav-link" href="./woman.html">Woman</a></li>
@@ -34,26 +52,30 @@
                         <li class="nav-item"><a class="nav-link" href="./visit.html">Visit Us</a></li>
                     </ul>
     
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row gap-3 alignment-mobile">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./profile.html"><i
-                                    class="fa-solid fa-circle-user" style="color: rgb(0, 0, 0);"></i></a>
+                            <a class="nav-link active p-2" aria-current="page" href="./profile.html">
+                                <i class="fa-solid fa-circle-user text-dark fs-5"></i>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"
-                                    style="color: rgb(0, 0, 0);"></i></a>
+                            <a class="nav-link p-2" href="./index.html">
+                                <i class="fa-solid fa-house text-dark fs-5"></i>
+                            </a>
                         </li>
-    
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
-                                <i class="fa-solid fa-cart-plus" style="color: rgb(0, 0, 0);"></i>
-                                <span id="cart-count" class="badge bg-warning text-dark">0</span>
+                            <a class="nav-link p-2 position-relative" href="#" data-bs-toggle="offcanvas"
+                                data-bs-target="#cartSidebar">
+                                <i class="fa-solid fa-cart-plus text-dark fs-5"></i>
+                                <span id="cart-count"
+                                    class="badge bg-warning text-dark position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
                             </a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
+    
+                    <form class="d-flex ms-lg-3 mt-2 mt-lg-0" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success text-success bg-transparent" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -66,7 +88,7 @@
 
 
                 <div class="nav-2 col-md-2 position-fixed start-0 vh-100 d-none d-md-block"
-                    style="z-index: 1020; top: 56px; padding-top: 20px;">
+                    style="z-index: 1020; top: 56px; padding-top: 69px;">
                     <ul class="nav nav-pills flex-column px-7 pt-9 ">
                         
                         <li class="nav-item mb-3">
@@ -113,7 +135,7 @@
 
                 <!--about us-->
 <section style="margin-top: -33px !important; position: relative; z-index: 10;">
-    <div class="col-md-10 offset-md-2 pt-0 pb-4 px-4">
+    <div class="col-md-10 offset-md-2 pt-0 pb-4 px-6">
         <img src="./assets/about us.jpg" alt="About Us" class="img-fluid w-100">
 
         <hr class="my-4 text-muted">
@@ -161,7 +183,59 @@
 </div>
 </div>
 </main>
+<!--Java-->
+<script>
 
+    function updateLiveClock() {
+        const clockElement = document.getElementById('live-clock');
+        if (!clockElement) return;
+
+        const now = new Date();
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        const dateString = now.toLocaleDateString('en-US', options);
+        const timeString = now.toLocaleTimeString('en-US', { hour12: true });
+
+        clockElement.innerText = `${dateString} | ${timeString}`;
+    }
+    updateLiveClock();
+    setInterval(updateLiveClock, 1000);
+
+    // --- Cart  ---
+    let count = 0;
+    let total = 0;
+
+    function toggleCart(name, price, button) {
+        const itemId = "cart-item-" + name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
+        const existingItem = document.getElementById(itemId);
+
+        if (!existingItem) {
+            count++;
+            total += price;
+
+            let li = document.createElement("li");
+            li.id = itemId;
+            li.className = "list-group-item d-flex justify-content-between align-items-center";
+            li.innerHTML = `<span>${name}</span> <span class="text-muted">Tk ${price.toLocaleString()}</span>`;
+            document.getElementById("cart-items").appendChild(li);
+
+            button.classList.remove('btn-outline-primary');
+            button.classList.add('btn-success');
+            button.innerText = 'Added ✓';
+        } else {
+            count--;
+            total -= price;
+
+            existingItem.remove();
+
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-primary');
+            button.innerText = 'Add Cart';
+        }
+
+        document.getElementById("cart-count").innerText = count;
+        document.getElementById("cart-total").innerText = total.toLocaleString();
+    }
+</script>
 
 
 <script src="./js/bootstrap.bundle.js"></script>

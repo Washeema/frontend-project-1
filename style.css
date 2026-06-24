@@ -6,10 +6,6 @@ body {
     overflow-x: hidden;
 }
 
-.navbar.fixed-top {
-    top: 0 !important;
-}
-
 body {
     background-color: #ffffff;
 }
@@ -37,7 +33,8 @@ body {
 }
 
 .faq-section {
-    margin-bottom: 60px;
+    margin-top: 49px;
+    margin-bottom: 600px;
 }
 
 .faq-section h3 {
@@ -113,6 +110,71 @@ body {
     background-color: #dab6b6;
 }
 
+.btn-success {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+    border-color: #28a745 !important;
+}
+
+
+.top-ticker-banner {
+    z-index: 1050;
+    /* Above navbar layers */
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    height: 40px;
+   
+    box-sizing: border-box;
+}
+
+.navbar.fixed-top {
+    top: 40px !important;
+   
+    z-index: 1040;
+}
+
+
+.main-content-area {
+    padding-top: 114px;
+}
+
+.sidebar-desktop-fixed {
+    z-index: 1020;
+    top: 114px;
+    padding-top: 2px;
+}
+
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+
+@media (max-width: 991px) {
+    .alignment-mobile {
+        justify-content: flex-start;
+        margin-top: 10px;
+        padding-left: 5px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .top-ticker-banner {
+        height: auto;
+        
+        padding: 6px 0;
+    }
+
+    .navbar.fixed-top {
+        top: 60px !important;
+        
+    }
+
+    .main-content-area {
+        padding-top: 136px;
+    }
+}
+
 @media (max-width: 768px) {
 
     h1,
@@ -127,9 +189,4 @@ body {
     .text-head h2 {
         font-size: 1.5rem;
     }
-}
-.btn-success {
-    background-color: #28a745 !important;
-    color: #ffffff !important;
-    border-color: #28a745 !important;
 }
